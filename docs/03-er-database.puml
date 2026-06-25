@@ -1,0 +1,27 @@
+⚠️Sin servidor de PlantUML, especifica uno con "plantuml.server".
+
+@startuml 03-er-database
+title Modelo ER — MySQL
+
+entity "users" as users {
+  *id : BIGINT <>
+  *username : VARCHAR(150) <>
+  *email : VARCHAR(254) <>
+  *password : VARCHAR(128)
+  *is_active : BOOLEAN
+  *is_staff : BOOLEAN
+  *date_joined : DATETIME
+  *created_at : DATETIME
+}
+
+entity "notes" as notes {
+  *id : BIGINT <>
+  *title : VARCHAR(200)
+  *body : TEXT
+  *owner_id : BIGINT <>
+  *created_at : DATETIME
+  *updated_at : DATETIME
+}
+
+users ||--o{ notes : "1:N"
+@enduml

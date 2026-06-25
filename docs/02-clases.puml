@@ -1,0 +1,33 @@
+⚠️Sin servidor de PlantUML, especifica uno con "plantuml.server".
+
+@startuml 02-clases
+title Clases del dominio
+
+class User <> {
+  - id: int
+  - username: str
+  - email: str
+  - password: str
+  - created_at: datetime
+}
+
+class Note <> {
+  - id: int
+  - title: str
+  - body: text
+  - owner: FK -> User
+  - created_at: datetime
+  - updated_at: datetime
+}
+
+class CustomUserManager <>
+class NoteForm <>
+class DashboardView <>
+class NoteCreateView <>
+class NoteDeleteView <>
+
+User "1" *-- "0..*" Note : owns
+CustomUserManager ..> User : crea
+DashboardView ..> Note
+NoteCreateView ..> NoteForm
+@enduml
