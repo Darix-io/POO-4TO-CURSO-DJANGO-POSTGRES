@@ -114,3 +114,4 @@ $RECYCLE.BIN/
 # - backend/.env.example
 # - frontend/.env.example
 # - docs/uml/*.puml
+backend/.git-backup/
